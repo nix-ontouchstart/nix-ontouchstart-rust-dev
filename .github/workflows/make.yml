@@ -37,7 +37,5 @@ jobs:
       run: cat nix-installer.sh | sh -s -- install --no-confirm
     - name: nix --version
       run: nix --version
-    - name: nix run "https://flakehub.com/f/BaseLayer-AI/baselayer-ai-qemu/*"
-      run: bash -c 'nix run "https://flakehub.com/f/BaseLayer-AI/baselayer-ai-qemu/*"'
     - name: make
       run: make
