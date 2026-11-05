@@ -12,7 +12,7 @@
           owner = "nix-ontouchstart";
           repo = "nix-ontouchstart-rust-dev";
           rev = "rust";
-          hash = "sha256-gnF2+wGaxOfWIpojZ8hlJWBZa38NXao+w0e7lHozEik=";
+          hash = "sha256-fdFQ43XK5rIvW//1eyZEXveqGnIpFbpoiuP+dzpfN7k=";
         };
         in pkgs.rustPlatform.buildRustPackage {
           pname = "nix-ontouchstart-rust-dev";
