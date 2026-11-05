@@ -1,5 +1,5 @@
 all:
-	nix develop --command type cargo rustc
+	nix develop --command which cargo rustc
 	nix run .
 	nix run github:nix-ontouchstart/nix-ontouchstart-rust-dev
 
