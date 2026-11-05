@@ -8,11 +8,17 @@
       x86_64-linux = import nixpkgs { system = "x86_64-linux"; };
 
       default = { pkgs } :
-        pkgs.rustPlatform.buildRustPackage {
+        let src = pkgs.fetchFromGitHub {
+          owner = "nix-ontouchstart";
+          repo = "nix-ontouchstart-rust-dev";
+          rev = "rust";
+          hash = "sha256-gnF2+wGaxOfWIpojZ8hlJWBZa38NXao+w0e7lHozEik=";
+        };
+        in pkgs.rustPlatform.buildRustPackage {
           pname = "nix-ontouchstart-rust-dev";
           version = "0.1.0";
-          src = ./.;
-          cargoLock.lockFile = ./Cargo.lock;
+          src = "${src}";
+          cargoLock.lockFile = "${src}/Cargo.lock";
         };
     in {
       packages.aarch64-darwin.default = default { pkgs = aarch64-darwin; };
